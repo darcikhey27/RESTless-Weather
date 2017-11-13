@@ -1,0 +1,7 @@
+darcikhey.com/api/v1/get?city={city_name}
+darcikhey.com/api/v1/get?city_id={id_number}
+darcikhey.com/api/v1/get?city=all
+
+darcikhey.com/api/v1/delete?city={city_id}
+darcikhey.com/api/v1/delete?id=CityId
+darcikhey.com/api/add?city

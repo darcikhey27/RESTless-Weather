@@ -43,7 +43,7 @@ function updateFields(id, name, cityID, description, main, icon, temp) {
 
     $("#my-table").append("<tr id='tr" + cityID + "'></tr>")
     $("#my-table tr:last").append(
-        "<td><div class='widget'><h3 id='city-name'>City: " + name + "</h3><p id='temp'>temp: " + temp + "</p><p id='icon-url'></p><p id='description'>Description: "+main +" "+ description + " </p><p id='city-id'>CityID: " + cityID + "</p>"+
+        "<td><div class='widget'><h3 id='city-name'>City: " + name + "</h3><p id='temp'>temp: " + temp + "</p><p id='icon-url'></p><p id='description'>Description: "+main +", "+ description + " </p><p id='city-id'>CityID: " + cityID + "</p>"+
         "<button class='btn btn-success'>refresh</button><button class='btn btn-danger'>delete</button></div></td>"
 
     );

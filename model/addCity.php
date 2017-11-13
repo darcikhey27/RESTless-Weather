@@ -1,7 +1,7 @@
 <?php
 require_once("location.php");
 require_once("creds.php");
-
+//var_dump($_POST);
 $cityName = $_POST["city"];
 
 $json = Location::getWeatherData($cityName);
@@ -23,10 +23,11 @@ $stmt->execute([$name, $cityID, $main, $description, $icon, $temp]);
 
 $stmt = $pdo->prepare("SELECT * FROM city_weather WHERE cityID=?");
 $stmt->execute([$cityID]);
+http_response_code(200);
 echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
 //echo json_encode($json);
 
 //echo $json;
-http_response_code(200);
+
 //echo json_encode($json);
 ?>
