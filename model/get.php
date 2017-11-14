@@ -2,29 +2,32 @@
 require_once("location.php");
 require_once("creds.php");
 
-$cityName = $_GET["city"];
-echo $cityName;
+if(isset($_GET["city_name"])) {
+    $city_name = $_GET["city_name"];
+    // get city by city name from db
+    $stmt = $pdo->prepare("SELECT * FROM city_weather WHERE name=?");
+    $stmt->execute([$city_name]);
+    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    //echo json_encode($json);
+    return;
+}
+else if(isset($_GET["city_id"])) {
+    // get city by city_id from db
+    $city_id = $_GET["city_id"];
+    $stmt = $pdo->prepare("SELECT * FROM city_weather WHERE cityID=?");
+    $stmt->execute([$city_id]);
+    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    //echo json_encode($json);
+    return;
 
-$json = Location::getWeatherData($cityName);
-
-// $main = $json["weather"][0]["main"];
-// $description = $json["weather"][0]["description"];
-// $icon = $json["weather"][0]["icon"];
-
-// // maybe add more vars for max and min and humidity data
-// $temp = $json["main"]["temp"];
-// $cityID = $json["id"];
-// $name = $json["name"];
-
-// $stmt = $pdo->prepare("INSERT INTO city_weather VALUES (NULL,?,?,?,?,?,?)");
-// $stmt->execute([$name, $cityID, $main, $description, $icon, $temp]);
-
-
-
-// $stmt = $pdo->prepare("SELECT * FROM city_weather WHERE cityID=?");
-// $stmt->execute([$cityID]);
-// http_response_code(200);
-// echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-echo json_encode($json);
-
+}
+else if(isset($_GET["city_all"])) {
+    // get all cities from db
+    $city_all = $_GET["city_all"];
+    $stmt = $pdo->prepare("SELECT * FROM city_weather");
+    $stmt->execute();
+    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    //echo json_encode($json);
+    return;
+}
 ?>
