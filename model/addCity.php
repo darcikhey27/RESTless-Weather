@@ -18,8 +18,9 @@ if(isset($_POST["city_name"])) {
     $stmt = $pdo->prepare("INSERT INTO city_weather VALUES (NULL,?,?,?,?,?,?)");
     $stmt->execute([$name, $cityID, $main, $description, $icon, $temp]);
     http_response_code(200);
-    echo "{status: 'city has been added'}";
-    return;
+    $response = array("Status"=> $city_name." has been added");
+    echo json_encode($response);
+    //return;
 }
 else if(isset($_POST["city_id"])) {
      // TODO: implement the api call to get city by id

@@ -30,4 +30,7 @@ else if(isset($_GET["city_all"])) {
     //echo json_encode($json);
     return;
 }
+else {
+    echo json_encode(array("status"=>"bad"));
+}
 ?>

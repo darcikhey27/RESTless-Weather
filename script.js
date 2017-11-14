@@ -2,7 +2,8 @@ $(document).ready(init);
 
 function init() {
     $.ajaxSetup({ cache: false, dataType: "json" });
-    $("#btn-add").on("click", btnAddCity);
+    $("#btn-add-post").on("click", btnAddCity);
+    $("#btn-add-get").on("click", btnGetCityName);
     $("#btn-refresh").on("click", btnRefreshCity);
     $("#btn-delete").on("click", btnDeleteCity);
 }
@@ -19,6 +20,28 @@ function btnAddCity() {
         success: function (data) {
             console.log("loggin data");
             console.log(data)
+            $("#code").append(JSON.stringify(data));
+            // var id = data[0].id;
+            // var name = data[0].name;
+            // var cityID = data[0].cityID;
+            // var main = data[0].main;
+            // var description = data[0].description;
+            // var icon = data[0].icon;
+            // var temp = data[0].temp;
+            //updateFields(id, name, cityID, description, main, icon, temp);
+        }
+    });
+}
+function btnGetCityName() {
+    var name = $("#city-name-get").val();
+    console.log(name);
+    $.ajax({
+        type: 'GET',
+        url: '/api/v1/weather/get?city_name='+name,
+        success: function (data) {
+            console.log("loggin data");
+            console.log(data)
+            $("#code-get").append(JSON.stringify(data));
             var id = data[0].id;
             var name = data[0].name;
             var cityID = data[0].cityID;
