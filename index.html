@@ -68,7 +68,7 @@
                 <h4>Test GET</h4>
                 <small>get city weather data</small>
                 <input type="text" id="city-name-get">
-                <button class="btn btn-danger" id="btn-add-get">Add</button>
+                <button class="btn btn-danger" id="btn-add-get">Get</button>
 
             </div>
 
@@ -85,7 +85,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <h4>UPDATE</h4>
                 <strong>For updating a city weather information by city name</strong>
                 <p>darcikhey.com/api/v1/update?city={city_name}</p>
@@ -95,18 +95,54 @@
                 <p>darcikhey.com/api/v1/update?city=all</p>
                 <br />
             </div>
-            <div class="col-md-7">
+            <div class="col-md-4">
                 <h4>Test UPDATE</h4>
+                <small>update weather data</small>
+                <input type="text" id="city-name-get">
+                <button class="btn btn-danger" id="btn-add-get">Update</button>
+            </div>
+            <div class="col-md-4">
+                <h4>Results</h4>
+                <p id="status">status...</p>
+                <code id="code-get"></code>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>DELETE</h4>
+                <strong>To delete a city by name</strong>
+                <p>darcikhey.com/api/v1/delete?city={city_name}</p>
+                <strong>To Delete a city by using city_id</strong>
+                <p>darcikhey.com/api/v1/update?city_id={id_number}}</p>
+                <strong>To delete all cities in database</strong>
+                <p>darcikhey.com/api/v1/delete?city=all</p>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <h4>Test DELETE</h4>
+                <small>delete weather data</small>
+                <input type="text" id="city-name-get">
+                <button class="btn btn-danger" id="btn-add-get">Delete</button>
+            </div>
+            <div class="col-md-4">
+                <h4>Results</h4>
+                <p id="status">status...</p>
+                <code id="code-get"></code>
             </div>
         </div>
 
-
     </div>
     </div>
 
 
 
-
+    <div class="container">
+        <footer>
+            <small>weather data provided by
+                <a href="https://openweathermap.org/">OpenWeatherMap</a>
+            </small>
+        </footer>
+    </div>
 
 </body>
 
