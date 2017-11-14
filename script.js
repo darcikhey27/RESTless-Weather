@@ -15,7 +15,7 @@ function btnAddCity() {
     $.ajax({
         type: 'POST',
         url: '/api/v1/weather/city/add/',
-        data: { city: name },
+        data: { city_name: name },
         success: function (data) {
             console.log("loggin data");
             console.log(data)
