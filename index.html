@@ -34,24 +34,43 @@
         </h4>
         <br />
         <div class="row">
+
             <h3>Weather Widget API</h3>
             <div class="col-md-4">
                 <h4>POST</h4>
                 <strong>For adding a city to the database </strong>
                 <p>darcikhey.com/api/v1/add?city={city_name}</p>
+                <div class="example-code">
+                    <pre>
+$.ajax({
+    type: 'POST',
+    url: '/api/v1/weather/city/add/',
+    data: { city_name: name },
+    success: function (data) {
+        // do something with data
+    }
+});
+                    </pre>
+                </div>
             </div>
+
             <div class="col-md-4">
                 <h4>Test POST</h4>
                 <small>add city to database</small>
                 <input type="text" id="city-name">
                 <button class="btn btn-danger" id="btn-add-post">Add</button>
             </div>
+
             <div class="col-md-4">
                 <h4>Results</h4>
                 <p id="status">status...</p>
                 <code id="code"></code>
             </div>
         </div>
+    </div>
+
+
+    <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <h4>GET</h4>
@@ -61,17 +80,24 @@
                 <p>darcikhey.com/api/v1/weather/get?city_id={id_number}</p>
                 <strong>For getting a all cities in database</strong>
                 <p>darcikhey.com/api/v1/weather/get?city_all=all</p>
-                <br />
+                <div class="example-code">
+                    <pre>
+$.ajax({
+    type: 'GET',
+    url: '/api/v1/weather/get?city_name='+name,
+    success: function (data) {
+        // use data
+    }
+});
+                    </pre>
+                </div>
             </div>
-
             <div class="col-md-4">
                 <h4>Test GET</h4>
                 <small>get city weather data</small>
                 <input type="text" id="city-name-get">
                 <button class="btn btn-danger" id="btn-add-get">Get</button>
-
             </div>
-
             <div class="col-md-4">
                 <h4>Results</h4>
                 <p id="status">status...</p>
@@ -81,9 +107,10 @@
                     <table class="table" id="my-table">
                     </table>
                 </div>
-
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <h4>UPDATE</h4>
@@ -107,6 +134,8 @@
                 <code id="code-get"></code>
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <h4>DELETE</h4>
@@ -130,11 +159,7 @@
                 <code id="code-get"></code>
             </div>
         </div>
-
     </div>
-    </div>
-
-
 
     <div class="container">
         <footer>

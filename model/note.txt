@@ -1,12 +1,12 @@
-darcikhey.com/api/v1/get?city={city_name}
+darcikhey.com/api/v1/get?city_name={city_name}
 darcikhey.com/api/v1/get?city_id={id_number}
-darcikhey.com/api/v1/get?city=all
+darcikhey.com/api/v1/get?city_all=all
 
 darcikhey.com/api/v1/add?city={city_name}
 darcikhey.com/api/v1/add?city_id={id_number}
-darcikhey.com/api/v1/add?city=all
 
-darcikhey.com/api/v1/update?city={city_name}
+
+darcikhey.com/api/v1/update?city_name={city_name}
 darcikhey.com/api/v1/update?city_id={id_number}
 darcikhey.com/api/v1/update?city=all
 
